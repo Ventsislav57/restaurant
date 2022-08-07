@@ -1,0 +1,95 @@
+* :before :after {
+    box-sizing: border-box;
+}
+
+.menu-layot {
+    display: block;
+    margin: 5% auto;
+}
+
+.menu-layot-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    flex: 1 1 100%;
+}
+
+.food {
+    border: 10px solid transparent;
+    background-color: transparent !important;
+    opacity: 1;
+    position: relative;
+    display: flex;
+    background-clip: padding-box;
+    background-origin: padding-box;
+    margin: 20px;
+}
+
+.pizza {
+    object-position: bottom;
+    margin: 30px;
+    max-width: 370px;
+}
+
+.pizza-info img {
+    width: 370px;
+    height: 400px;
+    margin-top: 69px
+}
+
+.pizza-info p {
+    color: white;
+    font-size: 23px;
+}
+
+.pizza-info a:hover {
+    opacity: 0.9;
+}
+
+.pizza-info a:active {
+    opacity: 0.7;
+}
+
+.taco {
+    margin: 30px;
+}
+
+.taco img {
+    width: 370px;
+    height: 600px;
+}
+
+.taco-info a:hover {
+    opacity: 0.9
+}
+
+.taco-info a:active {
+    opacity: 0.7;
+}
+
+.burger {
+    margin: 30px;
+    max-width: 370px;
+}
+
+.burger-info img {
+    width: 370px;
+    height: 300px;
+}
+
+.burger-info p {
+    color: white;
+    margin-top: 60px;
+    font-size: 23px;
+}
+
+.burger-info a:hover {
+    opacity: 0.9
+}
+
+.burger-info a:active {
+    opacity: 0.7
+}
