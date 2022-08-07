@@ -1,0 +1,321 @@
+.grid-conteiner {
+    display: grid;
+    grid-template-rows: 50px 50px;
+    margin: 3% auto;
+    row-gap: 40px;
+
+
+}
+
+.burger-menu-title {
+    justify-self: center;
+    font-size: 20px;
+}
+
+.burgers-information {
+    display: grid;
+    grid-template-columns: 700px 700px;
+    column-gap: 20px;
+    row-gap: 20px;
+    justify-self: center;
+    height: 600px;
+}
+
+.burger-menu-title h1 {
+    color: white;
+}
+
+.current-burger-info1 {
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3)50%, rgba(0, 0, 0, 0.3)50%), url("../../../public/pictures/burger-picture/bacon-burger.jpg");
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-burger1 {
+    padding: 30px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.grid-burger1 h4 {
+    font-size: 35px;
+    margin: 0 auto;
+    color: white;
+}
+
+.grid-burger1 h6 {
+    font-size: 30px;
+    margin: 20px auto 0;
+    color: red;
+}
+
+.grid-burger1 a {
+    background: rgb(182, 48, 48);
+    border-radius: 50px;
+    text-transform: uppercase;
+    margin: 20px auto 0;
+    font-size: 30px;
+    text-decoration: none;
+    width: 200px;
+    color: white;
+
+}
+
+.grid-burger1 a:hover {
+    opacity: 0.8;
+}
+.grid-burger1 a:active {
+    opacity: 0.6;
+}
+
+.current-burger-info2 {
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3)50%, rgba(0, 0, 0, 0.3)50%), url("../../../public/pictures/burger-picture/black-burger.jpg");
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-burger2 {
+    padding: 30px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.grid-burger2 h4 {
+    font-size: 35px;
+    margin: 0 auto;
+    color: white;
+}
+
+.grid-burger2 h6 {
+    font-size: 30px;
+    margin: 20px auto 0;
+    color: red;
+}
+
+.grid-burger2 a {
+    background: rgb(182, 48, 48);
+    border-radius: 50px;
+    text-transform: uppercase;
+    margin: 20px auto 0;
+    font-size: 30px;
+    text-decoration: none;
+    width: 200px;
+    color: white;
+
+}
+
+.grid-burger2 a:hover {
+    opacity: 0.8;
+}
+.grid-burger2 a:active {
+    opacity: 0.6;
+}
+
+.current-burger-info3 {
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3)50%, rgba(0, 0, 0, 0.3)50%), url("../../../public/pictures/burger-picture/double-burger.jpg");
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-burger3 {
+    padding: 30px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.grid-burger3 h4 {
+    font-size: 35px;
+    margin: 0 auto;
+    color: white;
+}
+
+.grid-burger3 h6 {
+    font-size: 30px;
+    margin: 20px auto 0;
+    color: red;
+}
+
+.grid-burger3 a {
+    background: rgb(182, 48, 48);
+    border-radius: 50px;
+    text-transform: uppercase;
+    margin: 20px auto 0;
+    font-size: 30px;
+    text-decoration: none;
+    width: 200px;
+    color: white;
+
+}
+
+.grid-burger3 a:hover {
+    opacity: 0.8;
+}
+.grid-burger3 a:active {
+    opacity: 0.6;
+}
+
+.current-burger-info4 {
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3)50%, rgba(0, 0, 0, 0.3)50%), url("../../../public/pictures/burger-picture/farm-burger.jpg");
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-burger4 {
+    padding: 30px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.grid-burger4 h4 {
+    font-size: 35px;
+    margin: 0 auto;
+    color: white;
+}
+
+.grid-burger4 h6 {
+    font-size: 30px;
+    margin: 20px auto 0;
+    color: red;
+}
+
+.grid-burger4 a {
+    background: rgb(182, 48, 48);
+    border-radius: 50px;
+    text-transform: uppercase;
+    margin: 20px auto 0;
+    font-size: 30px;
+    text-decoration: none;
+    width: 200px;
+    color: white;
+
+}
+
+.grid-burger4 a:hover {
+    opacity: 0.8;
+}
+.grid-burger4 a:active {
+    opacity: 0.6;
+}
+
+
+.current-burger-info5 {
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3)50%, rgba(0, 0, 0, 0.3)50%), url("../../../public/pictures/burger-picture/monster-burger.jpg");
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-burger5 {
+    padding: 30px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.grid-burger5 h4 {
+    font-size: 35px;
+    margin: 0 auto;
+    color: white;
+}
+
+.grid-burger5 h6 {
+    font-size: 30px;
+    margin: 20px auto 0;
+    color: red;
+}
+
+.grid-burger5 a {
+    background: rgb(182, 48, 48);
+    border-radius: 50px;
+    text-transform: uppercase;
+    margin: 20px auto 0;
+    font-size: 30px;
+    text-decoration: none;
+    width: 200px;
+    color: white;
+
+}
+
+.grid-burger5 a:hover {
+    opacity: 0.8;
+}
+.grid-burger5 a:active {
+    opacity: 0.6;
+}
+
+.current-burger-info6 {
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3)50%, rgba(0, 0, 0, 0.3)50%), url("../../../public/pictures/burger-picture/ofer.jpg");
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-burger6 {
+    padding: 30px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.grid-burger6 h4 {
+    font-size: 35px;
+    margin: 0 auto;
+    color: white;
+}
+
+.grid-burger6 h6 {
+    font-size: 30px;
+    margin: 20px auto 0;
+    color: red;
+}
+
+.grid-burger6 a {
+    background: rgb(182, 48, 48);
+    border-radius: 50px;
+    text-transform: uppercase;
+    margin: 20px auto 0;
+    font-size: 30px;
+    text-decoration: none;
+    width: 200px;
+    color: white;
+
+}
+
+.grid-burger6 a:hover {
+    opacity: 0.8;
+}
+.grid-burger6 a:active {
+    opacity: 0.6;
+}
