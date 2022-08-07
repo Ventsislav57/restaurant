@@ -27,7 +27,7 @@
 
 .current-burger-info1 {
     width: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.3)50%, rgba(0, 0, 0, 0.3)50%), url("../../../public/pictures/burger-picture/bacon-burger.jpg");
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3)50%, rgba(0, 0, 0, 0.3)50%), url("../../../public/pictures/burger-pictures/bacon-burger.jpg");
     background-position: center;
     background-size: cover;
     text-align: center;
@@ -76,7 +76,7 @@
 
 .current-burger-info2 {
     width: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.3)50%, rgba(0, 0, 0, 0.3)50%), url("../../../public/pictures/burger-picture/black-burger.jpg");
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3)50%, rgba(0, 0, 0, 0.3)50%), url("../../../public/pictures/burger-pictures/black-burger.jpg");
     background-position: center;
     background-size: cover;
     text-align: center;
@@ -125,7 +125,7 @@
 
 .current-burger-info3 {
     width: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.3)50%, rgba(0, 0, 0, 0.3)50%), url("../../../public/pictures/burger-picture/double-burger.jpg");
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3)50%, rgba(0, 0, 0, 0.3)50%), url("../../../public/pictures/burger-pictures/double-burger.jpg");
     background-position: center;
     background-size: cover;
     text-align: center;
@@ -174,7 +174,7 @@
 
 .current-burger-info4 {
     width: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.3)50%, rgba(0, 0, 0, 0.3)50%), url("../../../public/pictures/burger-picture/farm-burger.jpg");
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3)50%, rgba(0, 0, 0, 0.3)50%), url("../../../public/pictures/burger-pictures/farm-burger.jpg");
     background-position: center;
     background-size: cover;
     text-align: center;
@@ -224,7 +224,7 @@
 
 .current-burger-info5 {
     width: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.3)50%, rgba(0, 0, 0, 0.3)50%), url("../../../public/pictures/burger-picture/monster-burger.jpg");
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3)50%, rgba(0, 0, 0, 0.3)50%), url("../../../public/pictures/burger-pictures/monster-burger.jpg");
     background-position: center;
     background-size: cover;
     text-align: center;
@@ -273,7 +273,7 @@
 
 .current-burger-info6 {
     width: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.3)50%, rgba(0, 0, 0, 0.3)50%), url("../../../public/pictures/burger-picture/ofer.jpg");
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3)50%, rgba(0, 0, 0, 0.3)50%), url("../../../public/pictures/burger-pictures/ofer.jpg");
     background-position: center;
     background-size: cover;
     text-align: center;
