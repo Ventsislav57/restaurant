@@ -1,0 +1,106 @@
+.form-box {
+    width: 480px;
+    height: 580px;
+    position: relative;
+    margin: 4% auto;
+    background: rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.box-information {
+    margin: 5%;
+    font-size: 28px;
+    color: white;
+    text-align: center;
+}
+.conteiner-register {
+    margin: 13% auto;
+}
+
+.register-redirect {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    text-align: center;
+    margin-top: 16px;
+    margin: 0px;
+}
+
+.input-group-login {
+    top: 140px;
+    position: relative;
+    width: 270px;
+    margin: auto;
+    transition: .5s;
+
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 7px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid white;
+    outline: none;
+    background: transparent;
+    text-align: center;
+    color: white;
+    font-size: 17px;
+}
+
+.input-field::placeholder {
+    color: white;
+    opacity: 0.6
+}
+
+.login-page a {
+    width: 75%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: #ff8912;
+    outline: none;
+    border-radius: 30px;
+    margin-top: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(206, 206, 206);
+
+}
+
+.login-page a:hover {
+    opacity: 0.7;
+}
+
+.login-page a:active {
+    opacity: 0.9;
+    color: white;
+
+}
+
+.have-account a {
+    background: transparent;
+    border: none;
+    color: rgb(133, 129, 129);
+    text-decoration: underline;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0px;
+    padding: 0%;
+    text-align: center;
+    margin: 2% auto;
+
+}
+
+.have-account:hover a {
+    opacity: 0.7;
+    color: #ffffff;
+}
+
+.have-account:active a {
+    color: white;
+    opacity: 0.6;
+}
