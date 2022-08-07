@@ -6,8 +6,12 @@ function Register() {
 
 
     const onClickHandler = (e) => {
-        const data = Object.fromEntries(new FormData(e.currentTarget));
-        console.log(data);
+        const { email, firstName, phomenumber, password, rePasssword } = Object.fromEntries(new FormData(e.currentTarget));
+
+
+        if (password !== rePasssword) {
+            console.log('Password don\'t match!');
+        }
     }
 
     return (
@@ -20,12 +24,10 @@ function Register() {
                     <input id="email" type='text' className={styles['input-field']} name="email" placeholder='Enter your email address...' defaultValue='' />
                     <label htmlFor="firstName"></label>
                     <input id="firstName" type='text' className={styles['input-field']} name="firstName" placeholder='Enter your first name...' defaultValue='' />
-                    <label htmlFor="lastName"></label>
-                    <input id="lastName" type='text' className={styles['input-field']} name="lastName" placeholder='Enter your last name...' defaultValue='' />
                     <label htmlFor="phonenumber"></label>
                     <input id="phonenumber" type='text' className={styles['input-field']} name="phonenumber" placeholder='Enter your phonenumber...' defaultValue='' />
                     <label htmlFor="password"></label>
-                    <input id="password" type='text' className={styles['input-field']} name="password" placeholder='Enter your password...' defaultValue='' />
+                    <input id="password" type='password' className={styles['input-field']} name="password" placeholder='Enter your password...' defaultValue='' />
                     <label htmlFor="rePasssword"></label>
                     <input id="rePasssword" type='password' className={styles['input-field']} name="rePasssword" placeholder='Enter your re-password...' defaultValue='' />
                     <div className={styles['conteiner-register']}>
