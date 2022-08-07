@@ -1,0 +1,58 @@
+.content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white;
+}
+
+.content h1 {
+    font-size: 75px;
+    margin-top: 80px;
+}
+
+.content p {
+    margin: 40px auto;
+    font-weight: 100;
+    line-height: 30px;
+    font-size: 19px;
+}
+
+.home-buttons a {
+    width: 200px;
+    padding: 15px 19px;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid #ff8912;
+    color: white;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.home-buttons span {
+    background: #ff8912;
+    height: 100%;
+    width: 0;
+    padding-top: 5px;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    bottom: 0;
+    transition: 0.9s;
+}
+
+.home-buttons a:hover span {
+    width: 100%;
+}
+
+.home-buttons a:hover {
+    border: none;
+}
