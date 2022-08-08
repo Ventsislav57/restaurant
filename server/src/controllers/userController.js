@@ -21,17 +21,16 @@ const login = async (req, res) => {
 };
 
 const register = async (req, res, next) => {
-    const { firstName, lastName, email, phoneNumber, password } = req.body;
+    const { firstName, email, phoneNumber, password } = req.body;
 
     try {
-        const user = await userService.register( firstName, lastName, email, phoneNumber, password );
-
+        const user = await userService.register( firstName, email, phoneNumber, password );
         //   ????status????
 
         res.status(200).json({ user });
 
     } catch (error) {
-
+        res.status(301)
         return errorHandler(error, req, res);
     };
 

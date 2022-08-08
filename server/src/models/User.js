@@ -6,14 +6,14 @@ const { SATL_ROUNDS } = require('../config/constants');
 
 
 const userSchema = new mongoose.Schema({
+    email: {
+        type: String,
+        required: true,
+    },
     firstName: {
         type: String,
         required: true,
         minLength: [3, 'First name should be at least 3 characters long!']
-    },
-    email: {
-        type: String,
-        required: true,
     },
     phoneNumber: {
         type: Number,

@@ -49,7 +49,6 @@ function createToken(user) {
     const payload = {
         _id: user._id,
         firstName: user.firstName,
-        lastName: user.lastName,
         email: user.email,
         phoneNumber: user.phoneNumber
     };
@@ -59,7 +58,6 @@ function createToken(user) {
     return {
         _id: user._id,
         firstName: user.firstName,
-        lastName: user.lastName,
         email: user.email,
         phoneNumber: user.phoneNumber,
         accessToken: token
