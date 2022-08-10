@@ -3,8 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import styles from './Login.module.css';
 
-import userService from '../../services/userService';
-import { AuthContext } from '../context/AuthContext';
+import userService from '../../../services/userService';
+import { AuthContext } from '../../../context/AuthContext';
 
 function Login() {
 
@@ -15,7 +15,6 @@ function Login() {
     const submitHandler = async (e) => {
         e.preventDefault();
 
-        const { email, password } = values;
         
         try {
             const user = await userService.login(values);

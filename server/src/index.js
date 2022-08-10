@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 
 const db = require('./config/db');
 const { port, dbConnection } = require('./config/config');
+const authMiddlewares = require('./middlewares/authMiddlewares');
 
 const app = express();
 
@@ -14,6 +15,7 @@ const start = () => {
 
         app.use(express.json());
         app.use(cors());
+        app.use(authMiddlewares());
 
         require('./routes/router')(app);
 

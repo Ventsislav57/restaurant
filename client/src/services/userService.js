@@ -39,17 +39,29 @@ const login = async (userData) => {
     });
 
     const result = await response.json();
-    
+
     if (response.ok) {
         return result.user
 
     } else {
         throw { message: result.message };
     }
+};
+
+const logout = async (accessToken) => {
+
+    const response = await fetch(baseUrl + 'logout', {
+        headers: {
+            'X-Authorization': accessToken
+        }
+    });
+
+    return response;
 }
 
 module.exports = {
     getAll,
     register,
-    login
+    login,
+    logout
 }

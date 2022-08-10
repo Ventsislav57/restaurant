@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from '../../context/AuthContext';
 
 import './Header.css'
 
@@ -22,7 +22,7 @@ function Navbar() {
                         <li><Link to="/order">order</Link></li>
 
                         {user.email
-                            ? <li><Link to="/">Logout</Link></li>
+                            ? <li><Link to="/logout">Logout</Link></li>
                             : <li><Link to="/login">Log in</Link></li>
                         }
 

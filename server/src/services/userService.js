@@ -4,6 +4,7 @@ const User = require('../models/User');
 
 const { JWT_SECRET } = require('../config/constants');
 
+const blacklist = [];
 
 const login = async (email, password) => {
     const user = await User.findOne({ email });
@@ -37,6 +38,10 @@ const register = async (firstName, email, phoneNumber, password) => {
 
 };
 
+const logout = (accessToken) => {
+    blacklist.push(accessToken);
+}
+
 
 function createToken(user) {
 
@@ -56,10 +61,20 @@ function createToken(user) {
         phoneNumber: user.phoneNumber,
         accessToken: token
     };
+};
+
+function validateToken(accessToken) {
+    if (blacklist.includes(accessToken)) {
+        
+        throw new Error('Token is blacklisted');
+    }
+    return jwt.verify(accessToken, JWT_SECRET);
 }
 
 
 module.exports = {
     login,
-    register
+    register,
+    logout,
+    validateToken,
 }

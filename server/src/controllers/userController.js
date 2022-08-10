@@ -24,7 +24,7 @@ const register = async (req, res, next) => {
     const { firstName, email, phoneNumber, password } = req.body;
 
     try {
-        const user = await userService.register( firstName, email, phoneNumber, password );
+        const user = await userService.register(firstName, email, phoneNumber, password);
         //   ????status????
 
         res.status(200).json({ user });
@@ -36,7 +36,11 @@ const register = async (req, res, next) => {
 
 };
 
-const logout = 
+const logout = (req, res) => {
+
+    userService.logout(req.user.accessToken);
+    res.status(204).end();
+}
 
 const getAllUsers = async (req, res) => {
     try {
