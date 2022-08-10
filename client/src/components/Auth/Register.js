@@ -1,12 +1,13 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState, useContext } from 'react'
+import { useNavigate, Link } from 'react-router-dom'
 
-import { Link } from 'react-router-dom';
 import userService from '../../services/userService';
+import { AuthContext } from '../context/AuthContext';
 
 import styles from './Register.module.css';
 
 function Register() {
+    const { userHandler } = useContext(AuthContext);
 
     const [values, setValue] = useState({
         email: '',
@@ -16,29 +17,29 @@ function Register() {
         rePassword: ''
     });
     const navigate = useNavigate()
-    
-    
+
+
     const submitHandler = async (e) => {
-        
+
         e.preventDefault();
 
-        const { email, firstName, phoneNumber, password, rePassword } = values;
+        const { password, rePassword } = values;
 
         if (password !== rePassword) {
-           throw {message: 'Password don\'t match!'};
+            throw { message: 'Password don\'t match!' };
         }
 
         try {
-            const user = await userService.create(values);
+            const user = await userService.register(values);
+            userHandler(user);
             navigate('/');
-            console.log(user);
         } catch (error) {
             console.log(error);
         }
     }
     const changeHandler = (e) => {
-        setValue(state => ({
-            ...state,
+        setValue(oldValues => ({
+            ...oldValues,
             [e.target.name]: e.target.value
         }));
     }
@@ -105,10 +106,10 @@ function Register() {
                             Already have an account?
                         </div>
                         <div className={styles['have-account']}>
-                            <button to='/login'>Log in</button>
+                            <Link to='/login'>Log in</Link>
                         </div>
                     </div>
-                    <button to='/register' type='submit'>Create an account</button>
+                    <button type='submit'>Create an account</button>
                 </form>
             </div>
         </div>

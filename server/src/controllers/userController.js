@@ -9,12 +9,12 @@ const login = async (req, res) => {
 
     try {
         const user = await userService.login(email, password);
-
         //  ????status????
 
         res.status(200).json({ user });
 
     } catch (error) {
+        res.status(301);
         return errorHandler(error, req, res);
     }
 
@@ -35,6 +35,8 @@ const register = async (req, res, next) => {
     };
 
 };
+
+const logout = 
 
 const getAllUsers = async (req, res) => {
     try {
@@ -76,6 +78,7 @@ module.exports = {
     getAllUsers,
     register,
     login,
+    logout,
     updeitUser,
     deleteUser
 }

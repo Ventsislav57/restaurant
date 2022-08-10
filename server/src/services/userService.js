@@ -6,25 +6,19 @@ const { JWT_SECRET } = require('../config/constants');
 
 
 const login = async (email, password) => {
-    const exiting = await User.findOne({ email });
+    const user = await User.findOne({ email });
 
-    if (!exiting) {
-        return error = {
-            name: 'Custom error!',
-            errors: 'Incorrect email or password!'
-        }
+    if (!user) {
+        throw new Error('Incorrect email or password');
     }
-    const match = await bcrypt.compare(password, exiting.password);
-
+    
+    const match = await bcrypt.compare(password, user.password);
+    
     if (!match) {
-
-        return error = {
-            name: 'Custom error!',
-            errors: 'Incorrect email or password!'
-        }
+        throw new Error('Incorrect email or password');
     }
 
-    return createToken(exiting);
+    return createToken(user);
 }
 
 const register = async (firstName, email, phoneNumber, password) => {

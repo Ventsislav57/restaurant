@@ -83,26 +83,28 @@
 
 }
 
-.have-account button {
+.have-account {
+    text-align: center;
+}
+
+.have-account a {
     background: transparent;
     border: none;
     color: rgb(133, 129, 129);
     text-decoration: underline;
     font-size: 20px;
-    cursor: pointer;
     margin: 0px;
     padding: 0%;
-    text-align: center;
     margin: 2% auto;
 
 }
 
-.have-account:hover button {
+.have-account:hover a {
     opacity: 0.5;
     color: #ffffff;
 }
 
-.have-account:active button {
+.have-account:active a {
     color: white;
     opacity: 0.6;
 }

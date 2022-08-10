@@ -9,7 +9,9 @@ function errorHandler(error, req, res) {
     } else if (error.name === 'Custom error!') {
         res.json({ message: error.errors });
     } else if (error.name === 'User validation failed') {
-        res.json({ message: 'error.errors' });
+        res.json({ message: error.message });
+    } else {
+        res.json({ message: error.message });
     }
 }
 
