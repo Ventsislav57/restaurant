@@ -1,0 +1,80 @@
+.conteiner {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10%;
+}
+
+
+.conteiner img {
+    position: relative;
+}
+
+.box-information {
+    position: absolute;
+    left: 520px;
+    margin: 50px;
+}
+
+.burger-title {
+    color: white;
+    margin-bottom: 50px;
+}
+
+.burger-price {
+    color: white;
+    font-size: 20px;
+
+}
+
+.burger-description {
+    color: rgb(255, 255, 255);
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.buttons a {
+    margin: 20px;
+    padding: 10px 30px;
+    font-size: 20px;
+    background-color: rgb(16, 154, 154);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.7s;
+    
+}
+
+.buttons a:hover {
+    box-shadow: 5px 5px 10px red;
+    background-color: white;
+    color: rgb(16, 154, 154);
+}
+
+.buttons a:active {
+    opacity: 0.5;
+}
+
+.buttons button {
+    margin: 20px;
+    font-size: 20px;
+    padding: 10px 30px;
+    border-radius: 50px;
+    background-color: red;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.buttons button:hover {
+    box-shadow: 5px 5px 10px rgb(16, 154, 154);
+    background-color: white;
+    color: red;
+}
+
+.buttons button:active {
+    opacity: 0.5;
+}

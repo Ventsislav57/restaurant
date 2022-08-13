@@ -1,0 +1,76 @@
+.grid-conteiner {
+    display: grid;
+    grid-template-rows: 50px 50px;
+    margin: 3% auto;
+    row-gap: 40px;
+}
+
+.burger-menu-title {
+    justify-self: center;
+    font-size: 20px;
+}
+
+.burgers-information {
+    display: grid;
+    grid-template-columns: 700px 700px;
+    column-gap: 20px;
+    row-gap: 20px;
+    justify-self: center;
+    height: 600px;
+}
+
+.burger-menu-title h1 {
+    color: white;
+}
+
+.burgers-information img {
+    position: relative;
+    width: 680px;
+    height: 220px;
+    
+}
+
+.grid-row {
+    display: flex;
+
+}
+.grid-burger {
+    margin: 25px 80px;
+    position: absolute;
+    text-align: center;
+}
+
+.grid-burger h4 {
+    color: rgb(255, 255, 255);
+    font-size: 28px;
+    margin: 20px auto;
+
+}
+
+.grid-burger h6 {
+    color: rgb(255, 255, 255);
+    font-size: 28px;
+    color: red;
+    margin: 20px auto;
+}
+
+.grid-burger a {
+    background: rgb(182, 48, 48);
+    border-radius: 50px;
+    text-transform: uppercase;
+    padding: 13px;
+    margin: 30px auto 0;
+    font-size: 15px;
+    margin-left: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.grid-burger a:hover {
+    opacity: 0.7;
+}
+
+.grid-burger a:active {
+    background-color: rgb(15, 163, 15);
+    color: rgb(255, 255, 255);
+}
