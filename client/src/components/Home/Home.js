@@ -9,7 +9,7 @@ function Home() {
             <p>Best food in city!</p>
 
             <div className="home-buttons">
-                <Link to="/order"><span></span>оrder online</Link>
+                <Link to="/menu"><span></span>оrder online</Link>
                 <Link to="/reservation"><span></span>reservation</Link>
             </div>
         </div>

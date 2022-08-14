@@ -2,7 +2,6 @@
 
 
 function errorHandler(error, req, res) {
-    console.log(error);
     let message = 'Something went wrong!';
     if (error.name === 'ValidationError') {
         message = Object.values(error.errors)[0].message;

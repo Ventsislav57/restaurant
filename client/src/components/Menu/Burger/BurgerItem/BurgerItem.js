@@ -1,19 +1,20 @@
 import { Link } from 'react-router-dom';
 
-function BurgerItem() {
+function BurgerItem({
+    burger
+}){
     return (
-
         <div className="grid-row">
-            <img src="pictures/burger-pictures/double-burger.jpg" alt="burger" />
+            <img src={burger.image} alt="burger" />
             <div className='grid-burger'>
                 <h4>
-                    Double Burger
+                    {burger.title}
                 </h4>
                 <h6>
-                    $7.50
+                    ${burger.price}
                 </h6>
                 <Link to='/'>add</Link>
-                <Link to='/'>details</Link>
+                <Link to='/details/'>details</Link>
 
             </div>
         </div>
