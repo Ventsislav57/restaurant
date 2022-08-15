@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import styles from './PizzaMenu.module.css';
 
 function PizzaMenu() {
+
+    
     return (
         <div className={styles['conteiner-pizza']}>
 
@@ -99,10 +101,8 @@ function PizzaMenu() {
                                 Add to cart
                             </Link>
                         </div>
-
                     </div>
                 </div>
-
             </div>
         </div>
     );
