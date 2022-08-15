@@ -1,0 +1,91 @@
+.conteiner-pizza {
+    display: block;
+    margin: 30px auto;
+}
+
+.title h1 {
+    color: rgb(200, 18, 18);
+    font-size: 80px;
+    margin: 20px;
+    text-align: center;
+    cursor: default;
+}
+
+.title p {
+    color: white;
+    width: 790px;
+    margin: 10px auto;
+    cursor: default;
+    text-align: center;
+}
+
+.grid-conteiner-pizza {
+    display: grid;
+    grid-template-columns: 700px 700px;
+    justify-content: center; 
+    margin: 2%;
+    margin-left: 300px;
+    row-gap: 30px;
+}
+.grid-row-pizza {
+    display: flex;
+}
+
+.grid-row-pizza img {
+    width: 330px;
+    height: 270px;
+}
+
+.pizza-information {
+    background-color: white;
+    opacity: 0.9;
+}
+
+.pizza-title {
+    text-align: center;
+    color: black;
+    margin: 5% auto;
+    cursor: default;
+}
+
+.pizza-description {
+    font-size: 20px;
+    width: 240px;
+    color: rgb(0, 0, 0);
+    margin: 10% auto;
+    text-align: center;
+    cursor: default;
+}
+
+.pizza-price {
+    color: red;
+    text-align: center;
+    margin: 10% auto;
+    font-size: 24px;
+    cursor: default;
+}
+
+.pizza-button {
+    text-align: center;
+    margin: 10% auto;
+}
+
+.pizza-information a {
+    background-color:grey;
+    font-size: 22px;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+    transition: 0.7s;
+}
+
+.pizza-information a:hover {
+    box-shadow: 5px 5px 10px rgb(23, 22, 22);
+    opacity: 0.7;
+}
+
+.pizza-information a:active {
+    opacity: 1;
+}

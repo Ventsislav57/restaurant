@@ -5,9 +5,17 @@ const getAllBurgers = async () => {
     const response = await fetch(baseUrl + 'burgers');
     const result = await response.json();
 
-    return result.burgers
+    return result.burgers;
+}
+
+const getOneBurger = async (burgerId) => {
+    const response = await fetch(baseUrl + `burgers/${burgerId}`);
+    const result = await response.json();
+
+    return result.burger;
 }
 
 module.exports = {
-    getAllBurgers
+    getAllBurgers,
+    getOneBurger
 }

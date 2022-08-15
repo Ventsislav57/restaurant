@@ -1,28 +1,41 @@
-// import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
-import './BurgerDetails.css'
+import styles from './BurgerDetails.module.css';
+
+import foodService from '../../../services/foodService';
 
 function BurgerDetails() {
+
+    const [burger, setBurger] = useState({});
+    const { burgerId } = useParams();
+
+    useEffect(() => {
+        foodService.getOneBurger(burgerId)
+            .then((result) => setBurger(result))
+            .catch((err) => console.log(err));
+    }, [burgerId]);
+
+
     return (
-        <div className='conteiner'>
+        <div className={styles['conteiner']}>
 
-            <img src="https://images01.nicepage.com/c461c07a441a5d220e8feb1a/c9d623f81f7f5cb6a02150ad/rtrtrt.jpg" alt="bacon-burger" />
+            <img src={burger.image} alt="bacon-burger" />
 
-            <div className="box-information">
+            <div className={styles["box-information"]}>
 
-                <h1 className='burger-title'>
-                    Mega Burger
+                <h1 className={styles['burger-title']}>
+                    {burger.title}
                 </h1>
-                <span className='burger-price'>
-                    price:  7.50$
+                <span className={styles['burger-price']}>
+                    price: {burger.price}$
                 </span>
-               
-                <p className='burger-description'>
-                    description:  This burger is very good, must be tried!!
+
+                <p className={styles['burger-description']}>
+                    description:  {burger.description}
                 </p>
 
-                <div className='buttons'>
+                <div className={styles['buttons']}>
                     <Link to='/edit/:burgerId'>Edit</Link>
                     <button>delete</button>
                 </div>

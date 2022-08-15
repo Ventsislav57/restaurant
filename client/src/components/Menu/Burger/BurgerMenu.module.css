@@ -1,12 +1,12 @@
 .grid-conteiner {
     display: grid;
     grid-template-rows: 50px 50px;
-    margin: 3% auto;
+    margin: 2% auto;
     row-gap: 40px;
+    text-align: center;
 }
 
 .burger-menu-title {
-    justify-self: center;
     font-size: 20px;
 }
 
@@ -15,12 +15,15 @@
     grid-template-columns: 700px 700px;
     column-gap: 20px;
     row-gap: 20px;
-    justify-self: center;
     height: 600px;
 }
 
 .burger-menu-title h1 {
     color: white;
+}
+
+.burgers-information {
+    margin: 10px auto;
 }
 
 .burgers-information img {
@@ -32,7 +35,6 @@
 
 .grid-row {
     display: flex;
-
 }
 .grid-burger {
     margin: 25px 80px;

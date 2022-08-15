@@ -10,6 +10,7 @@ import Logout from './components/Auth/Logout/Logout';
 import BurgerMenu from './components/Menu/Burger/BurgerMenu';
 import Menu from './components/Menu/Menu';
 import BurgerDetails from './components/Menu/Burger/BurgerDetails';
+import PizzaMenu from './components/Menu/Pizza/PizzaMenu';
 
 function App() {
 
@@ -27,7 +28,9 @@ function App() {
                     <Route path='/logout' element={<Logout />} />
                     <Route path='/menu' element={<Menu />} />
                     <Route path='/burger-menu' element={<BurgerMenu />} />
-                    <Route path='/burger/details' element={<BurgerDetails />} />
+                    <Route path='/burger/details/:burgerId' element={<BurgerDetails />} />
+                    <Route path='/pizza-menu' element={<PizzaMenu />} />
+
                 </Routes>
 
             </div>

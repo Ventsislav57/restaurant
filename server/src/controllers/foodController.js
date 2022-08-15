@@ -33,8 +33,21 @@ const create = async (req, res) => {
     }
 }
 
+const getOne = async (req, res) => {
+
+    try {
+
+        const burger = await foodService.getOne(req.params.burgerId);
+        res.status(201).json({ burger });
+    } catch (error) {
+
+        return errorHandler(error, req, res);
+    }
+}
+
 
 module.exports = {
     getAllBurgers,
-    create
+    create,
+    getOne
 }
