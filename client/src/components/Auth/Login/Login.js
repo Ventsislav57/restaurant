@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import styles from './Login.module.css';
 
-import userService from '../../../services/userService';
+import { login } from '../../../services/userService';
 import { AuthContext } from '../../../context/AuthContext';
 
 function Login() {
@@ -15,12 +15,15 @@ function Login() {
     const submitHandler = async (e) => {
         e.preventDefault();
 
-        
-        try {
-            const user = await userService.login(values);
-            userHandler(user);
-            navigate('/');
 
+        try {
+            const user = await login(values);
+            if(!user.message) {
+                userHandler(user);
+                navigate('/');
+            }
+            
+            console.log(user);
         } catch (error) {
             console.log(error);
         }

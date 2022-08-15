@@ -24,7 +24,7 @@ const register = async (userData) => {
 
         return result.user;
     } else {
-        throw { message: result.message };
+        return { message: result.message };
     }
 };
 
@@ -44,7 +44,7 @@ const login = async (userData) => {
         return result.user
 
     } else {
-        throw { message: result.message };
+        return { message: result.message };
     }
 };
 

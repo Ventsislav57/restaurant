@@ -5,7 +5,7 @@ import './Home.css';
 function Home() {
     return (
         <div className="content">
-            <h1>Visit this super restorant</h1>
+            <h1>Visit this super restaurant</h1>
             <p>Best food in city!</p>
 
             <div className="home-buttons">

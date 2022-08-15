@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 
-import userService from '../../../services/userService';
+import { register } from '../../../services/userService';
 import { AuthContext } from '../../../context/AuthContext';
 
 import styles from './Register.module.css';
@@ -26,13 +26,16 @@ function Register() {
         const { password, rePassword } = values;
 
         if (password !== rePassword) {
-            throw { message: 'Password don\'t match!' };
+            return { message: 'Password don\'t match!' };
         }
 
         try {
-            const user = await userService.register(values);
-            userHandler(user);
-            navigate('/');
+            const user = await register(values);
+            if (!user.message) {
+                userHandler(user);
+                navigate('/');
+            }
+            console.log(user);
         } catch (error) {
             console.log(error);
         }

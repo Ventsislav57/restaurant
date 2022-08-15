@@ -11,6 +11,8 @@ import BurgerMenu from './components/Menu/Burger/BurgerMenu';
 import Menu from './components/Menu/Menu';
 import BurgerDetails from './components/Menu/Burger/BurgerDetails';
 import PizzaMenu from './components/Menu/Pizza/PizzaMenu';
+import Reservation from './components/Reservation/Reservation';
+import PrivateRoute from './components/common/PrivateRoute';
 
 function App() {
 
@@ -27,6 +29,11 @@ function App() {
                     <Route path='/register' element={<Register />} />
                     <Route path='/logout' element={<Logout />} />
                     <Route path='/menu' element={<Menu />} />
+                    <Route path='/reservation' element={
+                        <PrivateRoute>
+                            <Reservation />
+                        </PrivateRoute>
+                    } />
                     <Route path='/burger-menu' element={<BurgerMenu />} />
                     <Route path='/burger/details/:burgerId' element={<BurgerDetails />} />
                     <Route path='/pizza-menu' element={<PizzaMenu />} />
