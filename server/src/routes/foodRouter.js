@@ -12,9 +12,4 @@ router.post('/burgers', foodController.createBurger);
 router.post('/pizzas', foodController.createPizza);
 
 
-
-
-
-
-
 module.exports = router;
