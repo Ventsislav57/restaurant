@@ -22,8 +22,6 @@ function Login() {
                 userHandler(user);
                 navigate('/');
             }
-            
-            console.log(user);
         } catch (error) {
             console.log(error);
         }

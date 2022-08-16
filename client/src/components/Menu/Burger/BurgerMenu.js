@@ -1,20 +1,22 @@
 import { useState, useEffect } from 'react';
-
-import styles from  './BurgerMenu.module.css';
+import { NavLink } from 'react-router-dom';
 
 import foodService from '../../../services/foodService';
 import BurgerItem from './BurgerItem/BurgerItem';
 
+import styles from  './BurgerMenu.module.css';
+
 function BurgerMenu() {
     const [burgers, setBurgers] = useState([]);
 
+    
     useEffect(() => {
         foodService.getAllBurgers()
-            .then((result) => setBurgers(result))
+            .then(result => setBurgers(result))
             .catch((err) => console.log(err));
 
     }, [])
-
+        console.log(burgers);
     return (
         <div className={styles["burger-menu"]}>
             <div className={styles["grid-conteiner"]}>
