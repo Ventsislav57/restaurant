@@ -17,8 +17,7 @@ function ReservationInformation() {
     useEffect(() => {
         getOne(user._id)
             .then((result) => {
-                setReservations(result.reservations)
-                console.log(result);
+                setReservations(result.reservations);
             })
             .catch((err) => {
                 console.log(err);

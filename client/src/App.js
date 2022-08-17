@@ -17,6 +17,7 @@ import Profile from './components/Profile/Profile-information/Profile';
 import OrderInformation from './components/Profile/Order-information/Order';
 import ReservationInformation from './components/Profile/Reservation-information/Reservation';
 import ReservationDetail from './components/Profile/Reservation-information/ReservationDetail/ReservationDetails';
+import ReservationEdit from './components/Profile/Reservation-information/ReservationEdit/ReservationEdit';
 
 function App() {
     return (
@@ -63,8 +64,12 @@ function App() {
                             <ReservationInformation />
                         </PrivateRoute>
                     } />
+                    <Route path='/reservation/edit/:reservationId' element={
+                        <PrivateRoute>
+                            <ReservationEdit />
+                        </PrivateRoute>
+                    } />
                     <Route path='/reservation/details/:reservationId'  element={<ReservationDetail/>}/>
-
                 </Routes>
 
             </div>

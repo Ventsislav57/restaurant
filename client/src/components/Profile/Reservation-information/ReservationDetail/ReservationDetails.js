@@ -29,10 +29,14 @@ function ReservationDetail() {
 
         if (confirmation) {
             deleteReservation(reservation._id)
-                .then(() => {
-                    navigate('/reservation');
+                .then((result) => {
+                    console.log(result);
                 })
-        }
+                .catch((err) => {
+                    console.log(err);
+                })
+                navigate('/reservation');
+            }
     }
 
     return (

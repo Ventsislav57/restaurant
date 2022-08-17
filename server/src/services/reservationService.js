@@ -15,6 +15,10 @@ const createReseration = async (reservationData) => {
 
 const deleteReservation = async (reservationId) => {
     return await Reservation.findByIdAndRemove(reservationId);
+};
+
+const editReservation = async (reservationId, reservationData) => {
+    return await Reservation.findOneAndUpdate(reservationId, reservationData , {runValidators: true})
 }
 
 
@@ -22,5 +26,6 @@ module.exports = {
     getAllReservation,
     getOneReservation,
     createReseration,
-    deleteReservation
+    deleteReservation,
+    editReservation
 }
