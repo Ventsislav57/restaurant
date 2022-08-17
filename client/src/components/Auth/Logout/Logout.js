@@ -7,13 +7,13 @@ import * as userService from '../../../services/userService';
 function Logout() {
 
     const navigate = useNavigate();
-    const { user, userHandler } = useContext(AuthContext);
+    const { user, userLogout } = useContext(AuthContext);
 
     useEffect(() => {
         userService.logout(user.accessToken)
             .then(async (response) => {
                 if(response.ok) {
-                    userHandler({});
+                    userLogout();
                     navigate('/');
                 } else {
                     const result = await response.json();

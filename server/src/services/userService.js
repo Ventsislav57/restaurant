@@ -7,12 +7,12 @@ const { JWT_SECRET } = require('../config/constants');
 const blacklist = [];
 
 const login = async (email, password) => {
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email }).populate('reservations');
 
     if (!user) {
         throw new Error('Incorrect email or password');
     }
-    
+
     const match = await bcrypt.compare(password, user.password);
     
     if (!match) {
@@ -26,10 +26,7 @@ const register = async (firstName, email, phoneNumber, password) => {
     const exiting = await User.findOne({ email });
 
     if (exiting) {
-        return error = {
-            name: 'Custom error!',
-            errors: 'Email already exiting!'
-        }
+        throw new Error('Email alredy exiting!');
     }
 
     const user = await User.create({ firstName, email, phoneNumber, password });
@@ -40,6 +37,17 @@ const register = async (firstName, email, phoneNumber, password) => {
 
 const logout = (accessToken) => {
     blacklist.push(accessToken);
+};
+
+const getOneUser = (userId) => {
+    
+    const user = User.findById(userId).populate('reservations');
+
+    if (!user) {
+        throw new Error('Email or password dont match!');
+    }
+
+    return user
 }
 
 
@@ -49,7 +57,8 @@ function createToken(user) {
         _id: user._id,
         firstName: user.firstName,
         email: user.email,
-        phoneNumber: user.phoneNumber
+        phoneNumber: user.phoneNumber,
+        reservations: user.reservations
     };
 
     const token = jwt.sign(payload, JWT_SECRET);
@@ -59,6 +68,7 @@ function createToken(user) {
         firstName: user.firstName,
         email: user.email,
         phoneNumber: user.phoneNumber,
+        reservations: user.reservations,
         accessToken: token
     };
 };
@@ -77,4 +87,5 @@ module.exports = {
     register,
     logout,
     validateToken,
+    getOneUser
 }

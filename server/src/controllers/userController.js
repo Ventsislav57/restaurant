@@ -42,11 +42,22 @@ const logout = (req, res) => {
     res.status(204).end();
 }
 
+const getOneUser = async (req, res) => {
+
+    const userId = req.params.userId;
+
+    try {
+        const user = await userService.getOneUser(userId);
+        res.status(200).json({ user });
+    } catch (error) {
+        return errorHandler(error, req, res);
+    }
+}
+
 const getAllUsers = async (req, res) => {
+    
     try {
         const users = await User.find();
-
-        console.log(users);
 
         res.status(200).json({ users: users });
 
@@ -80,6 +91,7 @@ const deleteUser = async (req, res) => {
 
 module.exports = {
     getAllUsers,
+    getOneUser,
     register,
     login,
     logout,

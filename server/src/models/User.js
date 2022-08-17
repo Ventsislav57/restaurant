@@ -23,10 +23,15 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         minLength: [7, 'Password should be at least 7 characters long!']
-    }
+    },
+    reservations: [{
+        type: mongoose.Types.ObjectId,
+        ref: 'Reservation'
+    }]
 });
 
 userSchema.pre('save', function (next) {
+    if (!this.isModified('password')) return next();
     bcrypt.hash(this.password, SATL_ROUNDS)
         .then(hashedPassword => {
             this.password = hashedPassword;

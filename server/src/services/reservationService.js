@@ -11,11 +11,16 @@ const getOneReservation = async (reservationId) => {
 
 const createReseration = async (reservationData) => {
     return await Reservation.create(reservationData);
+};
+
+const deleteReservation = async (reservationId) => {
+    return await Reservation.findByIdAndRemove(reservationId);
 }
 
 
 module.exports = {
     getAllReservation,
     getOneReservation,
-    createReseration
+    createReseration,
+    deleteReservation
 }

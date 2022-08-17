@@ -9,6 +9,14 @@ const getAll = async () => {
     return result.users;
 };
 
+const getOne = async (userId) => {
+
+    const response = await fetch(baseUrl + userId);
+    const result = await response.json();
+
+    return result.user;
+};
+
 const register = async (userData) => {
 
     const response = await fetch(baseUrl + 'register', {
@@ -61,7 +69,8 @@ const logout = async (accessToken) => {
 
 module.exports = {
     getAll,
+    getOne,
     register,
     login,
-    logout
+    logout,
 }

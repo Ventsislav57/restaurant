@@ -10,7 +10,7 @@ function Home() {
 
             <div className="home-buttons">
                 <Link to="/menu"><span></span>оrder online</Link>
-                <Link to="/reservation"><span></span>reservation</Link>
+                <Link to="/make-reservation"><span></span>reservation</Link>
             </div>
         </div>
     );

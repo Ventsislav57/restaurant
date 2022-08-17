@@ -14,9 +14,11 @@ import PizzaMenu from './components/Menu/Pizza/PizzaMenu';
 import Reservation from './components/Reservation/Reservation';
 import PrivateRoute from './components/common/PrivateRoute';
 import Profile from './components/Profile/Profile-information/Profile';
+import OrderInformation from './components/Profile/Order-information/Order';
+import ReservationInformation from './components/Profile/Reservation-information/Reservation';
+import ReservationDetail from './components/Profile/Reservation-information/ReservationDetail/ReservationDetails';
 
 function App() {
-
     return (
         <AuthProvider>
 
@@ -34,7 +36,7 @@ function App() {
                         </PrivateRoute>
                     } />
                     <Route path='/menu' element={<Menu />} />
-                    <Route path='/reservation' element={
+                    <Route path='/make-reservation' element={
                         <PrivateRoute>
                             <Reservation />
                         </PrivateRoute>
@@ -51,12 +53,23 @@ function App() {
                             <Profile />
                         </PrivateRoute>
                     } />
+                    <Route path='/order' element={
+                        <PrivateRoute>
+                            <OrderInformation />
+                        </PrivateRoute>
+                    } />
+                    <Route path='/reservation' element={
+                        <PrivateRoute>
+                            <ReservationInformation />
+                        </PrivateRoute>
+                    } />
+                    <Route path='/reservation/details/:reservationId'  element={<ReservationDetail/>}/>
 
                 </Routes>
 
             </div>
 
-        </AuthProvider>
+         </AuthProvider>
     );
 };
 

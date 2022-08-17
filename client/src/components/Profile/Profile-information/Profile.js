@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from 'react';
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { AuthContext } from '../../../context/AuthContext';
@@ -30,7 +30,7 @@ function Profile() {
                     <NavLink className={({ isActive }) => isActive ? styles['actiove-button'] : styles['togle-button']} to='/order'>
                         Order
                     </NavLink>
-                    <NavLink className={({ isActive }) => isActive ? styles['actiove-button'] : styles['togle-button']} to='/profile/reservation'>
+                    <NavLink className={({ isActive }) => isActive ? styles['actiove-button'] : styles['togle-button']} to='/reservation'>
                         Reservation
                     </NavLink>
                 </div>

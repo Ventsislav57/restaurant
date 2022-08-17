@@ -7,7 +7,7 @@ import { AuthContext } from '../../../context/AuthContext';
 import styles from './Register.module.css';
 
 function Register() {
-    const { userHandler } = useContext(AuthContext);
+    const { setAuth } = useContext(AuthContext);
 
     const [values, setValue] = useState({
         email: '',
@@ -32,7 +32,7 @@ function Register() {
         try {
             const user = await register(values);
             if (!user.message) {
-                userHandler(user);
+                setAuth(user);
                 navigate('/');
             }
             console.log(user);

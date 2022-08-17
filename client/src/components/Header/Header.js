@@ -10,6 +10,7 @@ function Navbar() {
 
     const { user } = useContext(AuthContext);
 
+
     return (
         <header>
             <div className="navbar">
@@ -17,14 +18,14 @@ function Navbar() {
 
                 <div className="navbar-links">
                     <ul>
-                        {user.email && <span>Welcome, {user.email}!</span>}
+                        {user?.email && <span>Welcome, {user?.email}!</span>}
                         <li><Link to="/menu">Menu</Link></li>
-                        
-                        {user.email
-                            ? 
+
+                        {user?.email
+                            ?
                             <>
-                            <li><Link to="/profile">profile</Link></li>
-                            <li><Link to="/logout">Logout</Link></li>
+                                <li><Link to="/profile">profile</Link></li>
+                                <li><Link to="/logout">Logout</Link></li>
                             </>
                             : <li><Link to="/login">Log in</Link></li>
                         }

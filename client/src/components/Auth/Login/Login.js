@@ -9,7 +9,7 @@ import { AuthContext } from '../../../context/AuthContext';
 function Login() {
 
     const [values, setValues] = useState({});
-    const { userHandler } = useContext(AuthContext);
+    const { userLogin } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const submitHandler = async (e) => {
@@ -18,10 +18,11 @@ function Login() {
 
         try {
             const user = await login(values);
-            if(!user.message) {
-                userHandler(user);
+            if (!user.message) {
+                userLogin(user);
                 navigate('/');
             }
+            console.log(user);
         } catch (error) {
             console.log(error);
         }
