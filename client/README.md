@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# React-App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🛠 Libraries and tools used
 
-## Available Scripts
+ - [react] : useContext, useState, useEffect, Suspense, createContext,
+ - [react-router-dom] : BrowserRouter ,useParams, useNavigate, Link, NavLink, Navigate,Routes, Route, Outlet
+   useLocalStorage - to set localStorage user and order information
 
-In the project directory, you can run:
 
-### `npm start`
+## Base URL
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ App run on: http://localhost:3000 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Endpoints: 
 
-### `npm test`
+  *** Public ***
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  -> Home - '/'
+  -> Login - '/login'
+  -> Register - '/register'
+  -> Menu - '/menu'
+  -> Pizza menu - '/pizza-menu'
+  -> Burger menu - '/burger-menu'
+  -> Burger details - '/burger/details/:burgerId'
 
-### `npm run build`
+  *** Privete ***
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  -> Profile - '/profile'
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  -> Order menu - '/order'
+  -> Order details - '/order/information'
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  -> Reservation create - '/make-reservation'
+  -> Reservation menu - '/reservation'
+  -> reservation details - '/reservation/details/:reservationId'
+  -> reservation edit - '/reservation/edit/:reservationId'
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+ # Api send a request (Service)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  *** Auth-User *** 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  -> Register - '/api/users/register' - POST - body {email, firstName, phoneNumber, password, repeatPassword} 
+  -> Login - '/api/users/login' - POST - body {email, password} 
+  -> Logout - '/api/users/logout' - GET - Logout user at server and client, clearing userInformation on Browser 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  *** Auction ***
 
-## Learn More
+  -> Reservation menu    ->  '/api/users/:userId' - GET - Get all user reservations
+  -> Reservation details ->  '/api/reservation/:reservationId'  - GET - Get all information for this reservation 
+  -> Reservation edit    ->  'api/reservation/edit/:reservationId' - POST - body {email, firstName, phoneNumber, guests, date}
+  -> Reservation create  ->  '/api/reservation' - POST - body {email, firstName, phoneNumber, guests, date}
+  -> Reservation delete  ->  '/api/reservation/delete/:reservationId' - DELETE - body {reservationId}
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  -> Oder create -> '/api/orde/:userId' - POST - body {userId, orderData}
