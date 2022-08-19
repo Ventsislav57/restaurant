@@ -7,7 +7,9 @@ import { AuthContext } from '../../../context/AuthContext';
 import styles from './Register.module.css';
 
 function Register() {
-    const { setAuth } = useContext(AuthContext);
+    const { userLogin } = useContext(AuthContext);
+
+    const [errors, setErrors] = useState({});
 
     const [values, setValue] = useState({
         email: '',
@@ -20,26 +22,22 @@ function Register() {
 
 
     const submitHandler = async (e) => {
-
         e.preventDefault();
-
-        const { password, rePassword } = values;
-
-        if (password !== rePassword) {
-            return { message: 'Password don\'t match!' };
-        }
 
         try {
             const user = await register(values);
             if (!user.message) {
-                setAuth(user);
+                userLogin(user);
                 navigate('/');
             }
-            console.log(user);
         } catch (error) {
-            console.log(error);
+            setErrors(state => ({
+                ...state,
+                error: error.message
+            }))
         }
-    }
+    };
+
     const changeHandler = (e) => {
         setValue(oldValues => ({
             ...oldValues,
@@ -53,8 +51,14 @@ function Register() {
             <div className={styles["form-box"]}>
                 <div className={styles["box-information"]}>Sing up</div>
 
+                {errors.error &&
+                    <div className={styles['error']}>
+                        <p>{errors.error}</p>
+                    </div>
+                }
+
                 <form onSubmit={submitHandler} className={styles['input-group-register']}>
-                    <label htmlFor="email"></label>
+                    <label htmlFor="email" />
                     <input
                         id="email"
                         type='text'
@@ -64,7 +68,7 @@ function Register() {
                         value={values.email}
                         placeholder='Enter your email address...'
                     />
-                    <label htmlFor="firstName"></label>
+                    <label htmlFor="firstName" />
                     <input
                         id="firstName"
                         type='text'
@@ -74,7 +78,7 @@ function Register() {
                         value={values.firstName}
                         onChange={changeHandler}
                     />
-                    <label htmlFor="phoneNumber"></label>
+                    <label htmlFor="phoneNumber" />
                     <input
                         id="phoneNumber"
                         type='text'
@@ -84,7 +88,7 @@ function Register() {
                         value={values.phoneNumber}
                         onChange={changeHandler}
                     />
-                    <label htmlFor="password"></label>
+                    <label htmlFor="password" />
                     <input
                         id="password"
                         type='password'
@@ -94,7 +98,9 @@ function Register() {
                         value={values.password}
                         onChange={changeHandler}
                     />
-                    <label htmlFor="rePassword"></label>
+                    {errors.rePassword &&
+                        <label htmlFor="rePassword" className={styles['error']}>re-password should be at least 7 characters long!</label>
+                    }
                     <input
                         id="rePassword"
                         type='password'

@@ -7,6 +7,7 @@ import { login } from '../../../services/userService';
 import { AuthContext } from '../../../context/AuthContext';
 
 function Login() {
+    const [errors, setErrors] = useState({});
 
     const [values, setValues] = useState({});
     const { userLogin } = useContext(AuthContext);
@@ -22,12 +23,15 @@ function Login() {
                 userLogin(user);
                 navigate('/');
             }
-            console.log(user);
         } catch (error) {
-            console.log(error);
+            setErrors(state => ({
+                ...state,
+                error: error.message
+            }))
         }
 
     }
+    
 
     const changeHandler = (e) => {
         setValues(oldValues => ({
@@ -40,6 +44,12 @@ function Login() {
         <div onSubmit={submitHandler} id='login-form' className={styles["login-page"]}>
             <div className={styles["form-box"]}>
                 <div className={styles["box-information"]}>Log In</div>
+
+                {errors.error &&
+                    <div className={styles['error']}>
+                        <p>{errors.error}</p>
+                    </div>
+                }
 
                 <form id='login' className={styles["input-group-login"]}>
                     <label htmlFor="email"></label>

@@ -22,6 +22,8 @@ function Reservation() {
 
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
+    const [errors, setErrors] = useState({});
+
 
     const submitHandler = async (e) => {
 
@@ -29,13 +31,19 @@ function Reservation() {
         createReservation({ ...values, owner: user._id })
             .then((result) => {
                 if (!result.message) {
-                    console.log(result);
                     navigate('/');
+                }else {
+                    setErrors(state => ({
+                        ...state,
+                        error: result.message
+                    }))
                 }
-                console.log(result);
             })
-            .catch((err) => {
-                console.log(err);
+            .catch((error) => {
+                setErrors(state => ({
+                    ...state,
+                    error: error.message
+                }))
             })
 
 
@@ -50,6 +58,12 @@ function Reservation() {
         <div id='login-form' className={styles['login-page']}>
             <div className={styles["form-box"]}>
                 <div className={styles["box-information"]}>Make reservation</div>
+
+                {errors.error &&
+                    <div className={styles['error']}>
+                        <p>{errors.error}</p>
+                    </div>
+                }
 
                 <form onSubmit={submitHandler} className={styles['input-group-register']}>
                     <label htmlFor="email"></label>
