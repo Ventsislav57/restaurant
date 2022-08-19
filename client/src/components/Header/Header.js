@@ -26,10 +26,10 @@ function Navbar() {
                             <>
                                 <li><Link to="/profile">profile</Link></li>
                                 <li><Link to="/logout">Logout</Link></li>
+                                <li><Link to="/order/information">Order</Link></li>
                             </>
                             : <li><Link to="/login">Log in</Link></li>
                         }
-                        <li><Link to="/about">About</Link></li>
                     </ul>
                 </div>
             </div>

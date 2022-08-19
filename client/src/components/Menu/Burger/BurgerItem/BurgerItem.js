@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 
 import { AuthContext } from '../../../../context/AuthContext';
+import { OrderContext } from '../../../../context/OrderContext';
 
 import styles from '../BurgerMenu.module.css'
 
@@ -9,6 +10,12 @@ function BurgerItem({
     burger
 }) {
     const { user } = useContext(AuthContext);
+    const { addProduct } = useContext(OrderContext);
+
+    const addClickHandler = () => {
+        
+        addProduct(burger);
+    }
 
     return (
         <div className={styles["grid-row"]}>
@@ -22,7 +29,7 @@ function BurgerItem({
                 </h6>
 
                 {user.email
-                    ? <Link to='/'>add to cart</Link>
+                    ? <button onClick={addClickHandler}>add to cart</button>
                     : null
                 }
                 <Link to={`/burger/details/${burger._id}`}>details</Link>

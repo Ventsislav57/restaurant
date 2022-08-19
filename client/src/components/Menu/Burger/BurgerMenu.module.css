@@ -30,12 +30,13 @@
     position: relative;
     width: 680px;
     height: 220px;
-    
+
 }
 
 .grid-row {
     display: flex;
 }
+
 .grid-burger {
     margin: 25px 80px;
     position: absolute;
@@ -73,6 +74,27 @@
 }
 
 .grid-burger a:active {
+    background-color: rgb(15, 163, 15);
+    color: rgb(255, 255, 255);
+}
+
+.grid-burger button {
+    background: rgb(182, 48, 48);
+    border-radius: 50px;
+    text-transform: uppercase;
+    padding: 13px;
+    font-size: 15px;
+    margin-left: 15px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.grid-burger button:hover {
+    opacity: 0.7;
+}
+
+.grid-burger button:active {
     background-color: rgb(15, 163, 15);
     color: rgb(255, 255, 255);
 }

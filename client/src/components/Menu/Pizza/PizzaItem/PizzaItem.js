@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 
 import { AuthContext } from '../../../../context/AuthContext';
+import { OrderContext } from '../../../../context/OrderContext';
 
 import styles from '../PizzaMenu.module.css';
 
@@ -10,6 +10,11 @@ function PizzaItem({
 }) {
 
     const { user } = useContext(AuthContext);
+    const { addProduct } = useContext(OrderContext);
+
+    const addClcikHandler = () => {
+        addProduct(pizza);
+    }
 
     return (
         <div className={styles['grid-row-pizza']}>
@@ -26,9 +31,9 @@ function PizzaItem({
                     ${pizza.price}
                 </h6>
                 <div className={styles['pizza-button']}>
-                    
+
                     {user.email
-                        ? <Link to='/pizza-menu'>Add to cart</Link>
+                        ? <button onClick={addClcikHandler}>Add to cart</button>
                         : null
                     }
 

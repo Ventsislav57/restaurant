@@ -22,7 +22,7 @@ function ReservationInformation() {
             .catch((err) => {
                 console.log(err);
             })
-    }, [user._id])
+    }, [user]);
 
 
     return (

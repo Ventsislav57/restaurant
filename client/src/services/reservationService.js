@@ -14,4 +14,4 @@ export const createReservation = (reservationData) => requester.post(baseUrl, re
 
 export const deleteReservation = async (reservationId) => requester.get(`${baseUrl}/delete/${reservationId}`);
 
-export const editReservation = (reservationId, reservationData) => requester.put(`${baseUrl}/edit/${reservationId}`, reservationData);
+export const editReservation = (reservationId, reservationData) => requester.post(`${baseUrl}/edit/${reservationId}`, reservationData);

@@ -70,7 +70,7 @@
     margin: 10% auto;
 }
 
-.pizza-information a {
+.pizza-information button {
     background-color:grey;
     font-size: 22px;
     text-decoration: none;
@@ -79,13 +79,15 @@
     margin: 10px auto;
     border-radius: 10px;
     transition: 0.7s;
+    border: none;
+    cursor: pointer;
 }
 
-.pizza-information a:hover {
+.pizza-information button:hover {
     box-shadow: 5px 5px 10px rgb(23, 22, 22);
     opacity: 0.7;
 }
 
-.pizza-information a:active {
+.pizza-information button:active {
     opacity: 1;
 }

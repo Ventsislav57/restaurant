@@ -25,6 +25,13 @@
 
 }
 
+.error {
+    color: red;
+    font-size: 20px;
+    text-align: center;
+
+}
+
 .input-field {
     width: 100%;
     padding: 10px 0;
@@ -61,6 +68,11 @@
     color: rgb(255, 255, 255);
     font-size: 16px;
 
+}
+
+input #date {
+    background-color: white;
+    color: white
 }
 
 .login-page button:hover {

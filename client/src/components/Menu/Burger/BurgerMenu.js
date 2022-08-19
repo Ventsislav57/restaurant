@@ -16,7 +16,7 @@ function BurgerMenu() {
             .catch((err) => console.log(err));
 
     }, [])
-        console.log(burgers);
+    
     return (
         <div className={styles["burger-menu"]}>
             <div className={styles["grid-conteiner"]}>

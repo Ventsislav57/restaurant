@@ -22,7 +22,7 @@ function ReservationDetail() {
             })
 
 
-    }, []);
+    }, [reservationId]);
 
     const reservationDeleteHandler = () => {
         const confirmation = window.confirm('Are you sure you want to delete this reservation?');
@@ -35,7 +35,7 @@ function ReservationDetail() {
                 .catch((err) => {
                     console.log(err);
                 })
-                navigate('/reservation');
+                navigate('/');
             }
     }
 

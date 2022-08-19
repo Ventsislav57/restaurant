@@ -32,7 +32,7 @@ const register = async (userData) => {
 
         return result.user;
     } else {
-        return { message: result.message };
+        throw { message: result.message };
     }
 };
 
@@ -52,7 +52,7 @@ const login = async (userData) => {
         return result.user
 
     } else {
-        return { message: result.message };
+        throw { message: result.message };
     }
 };
 

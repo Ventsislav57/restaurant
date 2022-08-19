@@ -35,10 +35,10 @@ function BurgerDetails() {
                     description:  {burger.description}
                 </p>
 
-                <div className={styles['buttons']}>
+                {/* <div className={styles['buttons']}>
                     <Link to='/edit/:burgerId'>Edit</Link>
                     <button>delete</button>
-                </div>
+                </div> */}
             </div>
         </div>
     );
