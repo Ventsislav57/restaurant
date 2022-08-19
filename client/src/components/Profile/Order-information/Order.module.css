@@ -2,27 +2,56 @@
     background-color: white;
     margin: 5% auto;
     width: 500px;
-    height: 500px;
     opacity: 0.9;
-    border-radius: 100px;
+    text-align: center;
+    border-radius: 50px;
 }
 
-.first-name{
-    text-align: center;
-    font-size: 37px;
-    padding-top: 87px;
-
+.order-information {
+    display: flex;
+    justify-content: center;
+    background-color: grey;
 }
 
-.email {
+.componets-title {
     text-align: center;
-    margin: 10% auto;
+    padding-top: 15px;
+    margin: 10px;
+}
+
+.order-information p {
+    color: black;
+    font-size: 30px;
+    margin: 2%;
+}
+
+.delete-product {
+    margin-left: 45px;
+    height: 37px;
+    width: 65px;
+    margin-top: 11px;
+    background-color: rgb(245, 34, 34);
+    border-radius: 30px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.button-create {
+    margin: 7%;
+    padding: 11px;
+    background-color: aqua;
+    border: none;
+    color: rgb(131, 20, 0);
     font-size: 20px;
+    cursor: pointer;
+    border-radius: 30px;
 }
 
-.phonenumber {
-    text-align: center;
+.button-create:hover{
+    opacity: 0.7;
 }
+
 
 .buttons {
     display: flex;
