@@ -8,7 +8,7 @@ router.get('/:reservationId', reservationController.getOneReservation);
 router.get('/delete/:reservationId', reservationController.deleteReservation);
 
 router.post('/', reservationController.createReseration);
-router.put('/edit/:reservationId' , reservationController.editReservation)
+router.post('/edit/:reservationId' , reservationController.editReservation);
 
 
 module.exports = router;

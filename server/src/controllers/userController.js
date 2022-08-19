@@ -21,10 +21,9 @@ const login = async (req, res) => {
 };
 
 const register = async (req, res, next) => {
-    const { firstName, email, phoneNumber, password } = req.body;
 
     try {
-        const user = await userService.register(firstName, email, phoneNumber, password);
+        const user = await userService.register(req.body);
         //   ????status????
 
         res.status(200).json({ user });

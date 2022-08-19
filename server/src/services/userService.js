@@ -22,8 +22,14 @@ const login = async (email, password) => {
     return createToken(user);
 }
 
-const register = async (firstName, email, phoneNumber, password) => {
+const register = async ({firstName, email, phoneNumber, password, rePassword}) => {
     const exiting = await User.findOne({ email });
+
+    if(password !== rePassword) {
+        throw {
+            message: 'Passwords dont match!'
+        }
+    }
 
     if (exiting) {
         throw new Error('Email alredy exiting!');

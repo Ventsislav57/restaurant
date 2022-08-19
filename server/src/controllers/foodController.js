@@ -1,5 +1,3 @@
-const Burger = require('../models/Burger');
-
 const foodService = require('../services/foodService');
 const errorHandler = require('../utils/errorHandler');
 

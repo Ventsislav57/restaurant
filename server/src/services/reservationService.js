@@ -17,9 +17,8 @@ const deleteReservation = async (reservationId) => {
     return await Reservation.findByIdAndRemove(reservationId);
 };
 
-const editReservation = async (reservationId, reservationData) => {
-    return await Reservation.findOneAndUpdate(reservationId, reservationData , {runValidators: true})
-}
+const editReservation = (reservationId, reservationData) => Reservation.findByIdAndUpdate(reservationId, reservationData , {runValidators: true});
+
 
 
 module.exports = {

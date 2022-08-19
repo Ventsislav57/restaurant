@@ -70,11 +70,11 @@ const deleteReservation = async (req, res) => {
 const editReservation = async (req, res) => {
     const reservationId = req.params.reservationId;
     const reservationData = req.body
-
     try {
-        const reservation = await reservationService.editReservation(reservationId, reservationData);
+        // const reservation = await reservationService.editReservation(reservationId, reservationData).lean();
+        const reservation1 = await reservationService.editReservation(reservationId, reservationData).lean();
 
-        res.status(200).json({ reservation })
+        res.status(200).json(reservation1);
 
     } catch (error) {
         return errorHandler(error, req, res);

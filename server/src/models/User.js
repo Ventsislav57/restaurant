@@ -27,7 +27,8 @@ const userSchema = new mongoose.Schema({
     reservations: [{
         type: mongoose.Types.ObjectId,
         ref: 'Reservation'
-    }]
+    }],
+    orders: [{}]
 });
 
 userSchema.pre('save', function (next) {
