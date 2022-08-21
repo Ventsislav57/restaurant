@@ -18,6 +18,12 @@
     height: 600px;
 }
 
+.error{
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
+
 .burger-menu-title h1 {
     color: white;
 }

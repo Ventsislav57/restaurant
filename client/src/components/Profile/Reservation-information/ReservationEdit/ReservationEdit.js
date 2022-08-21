@@ -8,6 +8,7 @@ import styles from './Reservation.module.css';
 
 function Reservation() {
 
+    const [errors, setErrors] = useState({});
 
     const [values, setValue] = useState({
         email: '',
@@ -25,8 +26,11 @@ function Reservation() {
             .then((result) => {
                 setValue(result);
             })
-            .catch((err) => {
-                console.log(err);
+            .catch((error) => {
+                setErrors(state => ({
+                    ...state,
+                    error: error.message
+                }))
             })
     }, [reservationId])
 
@@ -39,8 +43,11 @@ function Reservation() {
             .then(() => {
                 navigate('/reservation')
             })
-            .catch((err) => {
-                console.log(err);
+            .catch((error) => {
+                setErrors(state => ({
+                    ...state,
+                    error: error.message
+                }))
             })
     }
     const changeHandler = (e) => {
@@ -53,6 +60,12 @@ function Reservation() {
         <div id='login-form' className={styles['login-page']}>
             <div className={styles["form-box"]}>
                 <div className={styles["box-information"]}>Edit reservation</div>
+
+                {errors.error &&
+                <div className={styles['error']}>
+                    <p>{errors.error}</p>
+                </div>
+            }
 
                 <form onSubmit={submitHandler} className={styles['input-group-register']}>
                     <label htmlFor="email"></label>

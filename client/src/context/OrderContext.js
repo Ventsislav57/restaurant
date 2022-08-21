@@ -9,6 +9,10 @@ export const OrderProvider = ({
 }) => {
     let [order, setOrder] = useLocalStorage('order', []);
 
+    const newUser = () => {
+        setOrder([]);
+    }
+
     const addProduct = (orderData) => {
         setOrder([...order, orderData]);
     };
@@ -27,7 +31,8 @@ export const OrderProvider = ({
             order,
             addProduct,
             removeOrder,
-            removeProduct
+            removeProduct,
+            newUser
         }}>
             {children}
         </OrderContext.Provider>

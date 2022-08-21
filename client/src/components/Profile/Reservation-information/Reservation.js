@@ -10,6 +10,7 @@ import ReservationItem from './ReservationItem/ReservationItem';
 
 function ReservationInformation() {
 
+    const [errors, setErrors] = useState({});
     const [reservations, setReservations] = useState([]);
     const { user } = useContext(AuthContext);
 
@@ -19,8 +20,11 @@ function ReservationInformation() {
             .then((result) => {
                 setReservations(result.reservations);
             })
-            .catch((err) => {
-                console.log(err);
+            .catch((error) => {
+                setErrors(state => ({
+                    ...state,
+                    error: error.message
+                }))
             })
     }, [user]);
 
@@ -34,6 +38,11 @@ function ReservationInformation() {
                     <h1 className={styles['componets-title']}>
                         Your reservation
                     </h1>
+                    {errors.error &&
+                        <div className={styles['error']}>
+                            <p>{errors.error}</p>
+                        </div>
+                    }
                     <div className={styles['reservation']}>
 
                         {reservations

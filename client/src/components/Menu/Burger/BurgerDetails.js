@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import styles from './BurgerDetails.module.css';
 
@@ -7,18 +7,34 @@ import foodService from '../../../services/foodService';
 
 function BurgerDetails() {
 
+    const [errors, setErrors] = useState({});
+
     const [burger, setBurger] = useState({});
+    
     const { burgerId } = useParams();
 
     useEffect(() => {
         foodService.getOneBurger(burgerId)
-            .then((result) => setBurger(result))
-            .catch((err) => console.log(err));
+            .then((result) => {
+                setBurger(result)
+            })
+            .catch((error) => {
+                setErrors(state => ({
+                    ...state,
+                    error: error.message
+                }))
+            });
     }, [burgerId]);
 
 
     return (
         <div className={styles['conteiner']}>
+
+            {errors.error &&
+                <div className={styles['error']}>
+                    <p>{errors.error}</p>
+                </div>
+            }
 
             <img src={burger.image} alt="bacon-burger" />
 

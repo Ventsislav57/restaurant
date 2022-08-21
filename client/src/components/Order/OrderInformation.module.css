@@ -6,10 +6,15 @@
     text-align: center;
 }
 
-
 .box h1 {
     margin: 20px auto;
     background-color: aqua;
+}
+
+.error{
+    color: red;
+    font-size: 20px;
+    text-align: center;
 }
 
 .order-information {
@@ -33,4 +38,28 @@
     margin-bottom: 5px;
     text-transform: uppercase;
     background-color: yellowgreen;
+}
+
+.order-details {
+    display: flex;
+}
+
+.order-details a {
+    font-size: 15px;
+    border: none;
+    border-radius: 20px;
+    padding: 9px;
+    margin-bottom: 5px;
+    margin-right: 25px;
+    margin-top: 15px;
+    text-transform: uppercase;
+    background-color: yellowgreen;
+    cursor: pointer;
+    transition: 1s;
+    text-decoration: none;
+}
+
+.order-details a:hover {
+    color:yellowgreen;
+    background-color: black;
 }

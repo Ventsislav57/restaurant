@@ -16,6 +16,12 @@
     margin: 50px;
 }
 
+.error{
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
+
 .burger-title {
     color: white;
     margin-bottom: 50px;

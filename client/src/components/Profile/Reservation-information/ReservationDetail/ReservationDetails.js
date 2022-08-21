@@ -7,6 +7,8 @@ import styles from './ReservationDetail.module.css';
 
 function ReservationDetail() {
 
+    const [errors, setErrors] = useState({});
+
     const [reservation, setReservation] = useState({})
 
     const { reservationId } = useParams();
@@ -17,8 +19,11 @@ function ReservationDetail() {
             .then((result) => {
                 setReservation(result);
             })
-            .catch((err) => {
-                console.log(err);
+            .catch((error) => {
+                setErrors(state => ({
+                    ...state,
+                    error: error.message
+                }))
             })
 
 
@@ -29,20 +34,27 @@ function ReservationDetail() {
 
         if (confirmation) {
             deleteReservation(reservation._id)
-                .then((result) => {
-                    console.log(result);
+                .then((result) => {})
+                .catch((error) => {
+                    setErrors(state => ({
+                        ...state,
+                        error: error.message
+                    }))
                 })
-                .catch((err) => {
-                    console.log(err);
-                })
-                navigate('/');
-            }
+            navigate('/');
+        }
     }
 
     return (
         <div className={styles["box"]}>
 
             <div className={styles['details-box']}>
+
+                {errors.error &&
+                    <div className={styles['error']}>
+                        <p>{errors.error}</p>
+                    </div>
+                }
                 <h2>
                     {reservation.firstName}
                 </h2>
@@ -50,7 +62,7 @@ function ReservationDetail() {
                     {reservation.email}
                 </h2>
                 <h2>
-                    {reservation.phoneNumber}
+                    0{reservation.phoneNumber}
                 </h2>
                 <h2>
                     {reservation.date}

@@ -1,33 +1,35 @@
-import { useEffect, useContext } from 'react';
+import { useContext, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 import { OrderContext } from '../../../context/OrderContext';
+import { AuthContext } from '../../../context/AuthContext';
 import { createOrder } from '../../../services/orderService';
 import OrderItem from './OrderItem/OrderItem'
 
 
 import styles from './Order.module.css';
-import { AuthContext } from '../../../context/AuthContext';
 
 function OrderInformation() {
 
+    const [errors, setErrors] = useState({});
     let { order, removeOrder } = useContext(OrderContext);
-    const { user, userLogin } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
 
     const navigate = useNavigate();
 
 
     const createHandler = () => {
 
-
         createOrder(order, user._id)
             .then((result) => {
-                console.log(result);
                 removeOrder();
                 navigate('/');
             })
-            .catch((err) => {
-                console.log(err)
+            .catch((error) => {
+                setErrors(state => ({
+                    ...state,
+                    error: error.message
+                }))
             })
     }
 
@@ -39,6 +41,13 @@ function OrderInformation() {
                 <h1 className={styles['componets-title']}>
                     Your order
                 </h1>
+
+                {errors.error &&
+                    <div className={styles['error']}>
+                        <p>{errors.error}</p>
+                    </div>
+                }
+
                 {order.length > 0
                     ? order.map(x => <OrderItem key={x._id} order={x} />)
                     : null

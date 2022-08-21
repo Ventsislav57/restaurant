@@ -7,6 +7,7 @@ import styles from '../Order.module.css';
 function OrderItem({
     order,
 }) {
+
     const { removeProduct } = useContext(OrderContext);
 
     const deleteHandler = () => {

@@ -5,21 +5,26 @@ import styles from './Login.module.css';
 
 import { login } from '../../../services/userService';
 import { AuthContext } from '../../../context/AuthContext';
+import { OrderContext } from '../../../context/OrderContext';
+
 
 function Login() {
-    const [errors, setErrors] = useState({});
 
+    const [errors, setErrors] = useState({});
     const [values, setValues] = useState({});
+    
     const { userLogin } = useContext(AuthContext);
+    const { newUser } = useContext(OrderContext);
+
     const navigate = useNavigate();
 
     const submitHandler = async (e) => {
         e.preventDefault();
 
-
         try {
             const user = await login(values);
             if (!user.message) {
+                newUser();
                 userLogin(user);
                 navigate('/');
             }
@@ -31,7 +36,6 @@ function Login() {
         }
 
     }
-    
 
     const changeHandler = (e) => {
         setValues(oldValues => ({

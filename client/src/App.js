@@ -26,9 +26,9 @@ function App() {
         <AuthProvider>
 
             <div className="menu">
-                <OrderProvider>
 
-                    <Navbar />
+                <Navbar />
+                <OrderProvider>
 
                     <Routes>
                         <Route path='/' element={<Home />} />
@@ -72,12 +72,14 @@ function App() {
                                 <ReservationEdit />
                             </PrivateRoute>
                         } />
-                           <Route path='/order/information' element={
+                        <Route path='/order/information' element={
                             <PrivateRoute>
                                 <CreatedOrder />
                             </PrivateRoute>
                         } />
                         <Route path='/reservation/details/:reservationId' element={<ReservationDetail />} />
+
+
                     </Routes>
                 </OrderProvider>
 
